@@ -29,5 +29,24 @@ func main() {
 		fmt.Println("Error:", err)
 	}
 
+	empolyees := []User{
+		
+	}
+
+	for _, value := range empolyees {
+		db.Write("users", values.Name, User{
+			Name:value.Name,
+			Age: value.Age,
+			Contact: value.Contact,
+			Company: value.Company,
+			Address: Address,
+		})
+	}
+
+	records, err := db.ReadAll("users")
+	if err != nil {
+		fmt.Println("Error", err)
+	}
+	fmt.Println(records)
 }
 
